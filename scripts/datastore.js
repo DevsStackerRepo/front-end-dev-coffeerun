@@ -11,6 +11,7 @@
     DataStore.prototype.add = function(key,val){
         var promise = new Promise(function (resolve, reject) {
             this.data[key] = val; }.bind(this));
+            resolve(null);
         return promise;
     }
 
