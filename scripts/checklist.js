@@ -11,6 +11,10 @@
         throw new Error('Could not find element with selector: ' + selector);
       }
   }
+
+  function Row(coffeeOrder) {
+    // Constructor code will go here
+  }
     App.CheckList = CheckList;
     window.App = App;
   })(window);
