@@ -13,6 +13,8 @@
   }
 
   CheckList.prototype.addRow = function (coffeeOrder) {
+     // Remove any existing rows that match the email address
+     this.removeRow(coffeeOrder.emailAddress);
     // Create a new instance of a row, using the coffee order info
     var rowElement = new Row(coffeeOrder);
     // Add the new row instance's $element property to the checklist
