@@ -8,10 +8,10 @@
       }
       this.serverUrl = url;
     }
-
     RemoteDataStore.prototype.add = function (key, val) {
-        $.post(this.serverUrl, val);
-      };
+        $.post(this.serverUrl, val, function (serverResponse) { 
+            console.log(serverResponse);
+        }); };
     App.RemoteDataStore = RemoteDataStore;
     window.App = App;
   })(window);
