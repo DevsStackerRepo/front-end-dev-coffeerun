@@ -14,22 +14,30 @@
         }); };
 
         RemoteDataStore.prototype.getAll = function (cb) {
-            $.get(this.serverUrl, function (serverResponse) {
-                console.log(serverResponse);
-                cb(serverResponse);
+            return $.get(this.serverUrl, function (serverResponse) {
+                if(cb){
+                    console.log(serverResponse);
+                    cb(serverResponse);
+                }
               });
           };
 
           RemoteDataStore.prototype.get = function (key, cb) {
-            $.get(this.serverUrl + '/' + key, function (serverResponse) {
-              console.log(serverResponse);
-              cb(serverResponse);
+           return $.get(this.serverUrl + '/' + key, function (serverResponse) {
+            if(cb){
+
+                console.log(serverResponse);
+                cb(serverResponse);
+            }
             });
         };
 
-        RemoteDataStore.prototype.remove = function (key) {
-            $.ajax(this.serverUrl + '/' + key, {
-              type: 'DELETE'
+        RemoteDataStore.prototype.remove = function (key,) {
+            return $.ajax(this.serverUrl + '/' + key, {
+               
+
+                    type: 'DELETE'
+                
             });
         };
         
