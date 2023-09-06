@@ -22,6 +22,7 @@
                 console.log(item.name + ' is ' + item.value);
               });
       console.log(data);
+      fn(data);
           });
       };
 
