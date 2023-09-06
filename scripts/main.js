@@ -2,7 +2,7 @@
     'use strict';
     var FORM_SELECTOR = '[data-coffee-order="form"]';
     var CHECKLIST_SELECTOR = '[data-coffee-order="checklist"]';
-    var SERVER_URL = 'http://coffeerun.herokuapp.com/api/coffeeorders';
+    var SERVER_URL = 'http://coffeerun-v2-rest-api.herokuapp.com/api/coffeeorders';
     var App = window.App;
     var Truck = App.Truck;
     var DataStore = App.DataStore;
@@ -17,12 +17,10 @@
     checkList.addClickHandler(myTruck.deliverOrder.bind(myTruck));
     var formHandler = new FormHandler(FORM_SELECTOR);
     formHandler.addSubmitHandler(function (data) {
-        myTruck.createOrder.call(myTruck, data)
+        return myTruck.createOrder.call(myTruck, data)
              .then(function () {
                 checkList.addRow.call(checkList, data);
-        },function () {
-            alert('Server unreachable. Try again later.');
-          });
+        });
         });
 formHandler.addInputHandler(Validation.isCompanyEmail);
   console.log(formHandler);
