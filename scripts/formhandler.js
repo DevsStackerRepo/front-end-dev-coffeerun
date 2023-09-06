@@ -23,6 +23,8 @@
               });
       console.log(data);
       fn(data);
+      this.reset();
+      this.elements[0].focus();
           });
       };
 
